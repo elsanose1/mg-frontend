@@ -1,0 +1,29 @@
+.about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh;
+}
+
+.flex-box {
+  margin-top: 10vh;
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+
+  @media screen and (max-width: 35.5em) {
+    flex-direction: column;
+  }
+  .details {
+    line-height: 2rem;
+    font-size: 1.2rem;
+  }
+  .pics {
+    text-align: center;
+    img {
+      width: 50vw;
+      @media screen and (max-width: 35.5em) {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,162 @@
+// sets
+
+$gl-ms: "screen and (max-width: 23.5em)"; // up to 360px
+$gl-xs: "screen and (max-width: 35.5em)"; // up to 568px
+$gl-sm: "screen and (max-width: 48em)"; // max 768px
+$gl-md: "screen and (max-width: 64em)"; // max 1024px
+$gl-lg: "screen and (max-width: 80em)"; // max 1280px
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: black;
+
+  .row {
+    label {
+      margin: 10px;
+    }
+    select {
+      outline: none;
+      border: none;
+      min-width: 100px;
+      font-size: 15px;
+      border-bottom: #2196f3 1px solid;
+    }
+    input {
+      outline: none;
+      border: none;
+      border-bottom: #2196f3 2px solid;
+      text-indent: 5px;
+      font-size: 16px;
+    }
+
+    @media #{$gl-xs} {
+      width: 100%;
+      text-align: center;
+      label {
+        display: none;
+      }
+    }
+  }
+}
+
+// table style
+
+.table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 90%;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 10px;
+  position: relative;
+  color: black;
+
+  * {
+    position: relative;
+  }
+
+  td,
+  th {
+    padding-left: 8px;
+  }
+
+  thead tr {
+    height: 60px;
+    background: #03a9f4;
+    font-size: 16px;
+    color: white;
+  }
+
+  tbody tr {
+    height: 40px;
+    border-bottom: 1px solid #3a3a3a;
+    &:last-child {
+      border: 0;
+    }
+    &:hover {
+      background-color: #0000000c;
+    }
+  }
+
+  td a {
+    padding: 0px 10px;
+    margin: 0 5px;
+    text-decoration: none;
+    border-radius: 100px;
+    color: white;
+
+    background-color: #03a9f4;
+
+    &:last-child {
+      background-color: #28ab2e;
+    }
+  }
+  td,
+  th {
+    text-align: left;
+    &.l {
+      text-align: right;
+    }
+    &.c {
+      text-align: center;
+    }
+    &.r {
+      text-align: right;
+    }
+  }
+}
+
+@media #{$gl-xs} {
+  .table {
+    display: block;
+    > *,
+    tr,
+    td,
+    th {
+      display: block;
+    }
+
+    thead {
+      display: none;
+    }
+    tbody tr {
+      height: auto;
+      padding: 8px 0;
+      td {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &:before {
+          // position: absolute;
+          font-weight: 700;
+          width: 40%;
+          left: 10px;
+          top: 0;
+        }
+
+        &:nth-child(1):before {
+          content: "Name";
+        }
+        &:nth-child(2):before {
+          content: "Address";
+        }
+        &:nth-child(3):before {
+          content: "City";
+        }
+        &:nth-child(4):before {
+          content: "Creator";
+        }
+      }
+    }
+  }
+}

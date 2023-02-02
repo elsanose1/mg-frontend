@@ -1,0 +1,60 @@
+.school-header {
+  display: flex;
+  gap: 15px;
+  border-bottom: 2px solid #03a9f4;
+
+  button {
+    outline: none;
+    border: none;
+    margin-bottom: 10px;
+    background-color: #b71c1c;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    padding: 10px 35px;
+
+    &:hover {
+      background-color: #fd0000;
+    }
+  }
+
+  & > * {
+    padding: 10px;
+    border-right: 2px solid #03a9f4;
+    font-size: 1.2rem;
+
+    @media screen and (max-width: 35.5em) {
+      font-size: 1rem;
+
+      border-right: none;
+    }
+  }
+
+  @media screen and (max-width: 35.5em) {
+    flex-direction: column;
+  }
+}
+.container {
+  display: flex;
+  height: 100%;
+
+  @media screen and (max-width: 35.5em) {
+    flex-direction: column;
+  }
+  .school-detail {
+    flex: 1;
+    height: 100%;
+    border-right: 2px solid #03a9f4;
+    @media screen and (max-width: 35.5em) {
+      border-bottom: 2px solid #03a9f4;
+      border-right: none;
+      padding-bottom: 3rem;
+    }
+  }
+
+  .employe-detail {
+    flex: 1;
+    height: 100%;
+  }
+}
