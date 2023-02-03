@@ -60,6 +60,7 @@ const router = createBrowserRouter([
               {
                 path: "schools",
                 element: <SchoolRoot />,
+                loader: isAuthonticated,
                 children: [
                   {
                     index: true,
@@ -80,6 +81,7 @@ const router = createBrowserRouter([
               {
                 path: "stores",
                 element: <StoreRoot />,
+                loader: isAuthonticated,
                 children: [
                   {
                     index: true,

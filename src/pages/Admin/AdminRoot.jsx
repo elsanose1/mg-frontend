@@ -9,12 +9,11 @@ const AdminRoot = () => {
 
   return (
     <>
-      {navigation.state === "loading" ||
-        (navigation.state === "submitting" && (
-          <Modal>
-            <h2>Loading...</h2>
-          </Modal>
-        ))}
+      {navigation.state === "loading" && (
+        <Modal>
+          <h2>Loading...</h2>
+        </Modal>
+      )}
       <AdminNavigation />
       <div className={classes.wrapper}>
         <React.Suspense>

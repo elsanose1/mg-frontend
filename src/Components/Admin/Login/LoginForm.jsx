@@ -1,7 +1,8 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import classes from "./LoginForm.module.css";
 
 const LoginForm = (props) => {
+  const isLoading = props.isLoading;
   const emailInput = useRef();
   const passwordInput = useRef();
 
@@ -13,6 +14,7 @@ const LoginForm = (props) => {
     };
     props.onLogin(user);
   };
+  console.log(isLoading);
 
   return (
     <div className={classes["form-wraper"]}>
@@ -43,8 +45,8 @@ const LoginForm = (props) => {
           />
         </div>
 
-        <button type="submit" className={classes.btn}>
-          Login
+        <button type="submit" disabled={isLoading} className={classes.btn}>
+          {isLoading ? "Loading.." : "Login"}
         </button>
       </form>
     </div>

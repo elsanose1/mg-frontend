@@ -4,6 +4,8 @@ import LoginForm from "../../Components/Admin/Login/LoginForm";
 
 const Login = () => {
   const [error, setError] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -12,7 +14,9 @@ const Login = () => {
       navigate("/admin/dashboard/");
     }
   }, [navigate]);
+
   const onLoginHandler = async (user) => {
+    setIsLoading(true);
     setError(false);
     try {
       const res = await fetch(
@@ -28,6 +32,7 @@ const Login = () => {
 
       if (!res.ok) {
         setError(true);
+        setIsLoading(false);
         return;
       }
 
@@ -39,7 +44,11 @@ const Login = () => {
 
   return (
     <>
-      <LoginForm errors={error} onLogin={onLoginHandler} />
+      <LoginForm
+        errors={error}
+        isLoading={isLoading}
+        onLogin={onLoginHandler}
+      />
     </>
   );
 };
