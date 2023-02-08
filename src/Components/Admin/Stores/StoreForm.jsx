@@ -8,6 +8,7 @@ const StoreForm = () => {
   const [storeTitleInput, setstoreTitleInput] = useState();
   const [storeNameInput, setstoreNameInput] = useState();
   const [location, setLocation] = useState();
+  const [phone, setPhone] = useState();
   const [address, setAddress] = useState();
   const [cityInput, setCityInput] = useState();
   const [citiesArray, setCitiesArray] = useState([]);
@@ -32,6 +33,7 @@ const StoreForm = () => {
       name: storeNameInput,
       address,
       map: location,
+      phone,
       city: cityInput,
     };
 
@@ -94,6 +96,18 @@ const StoreForm = () => {
             id="address"
             name="address"
             placeholder="Address"
+            required
+          />
+        </div>
+        <div className={classes.row}>
+          <label htmlFor="address">Phone</label>
+          <input
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            type="text"
+            id="phone"
+            name="phone"
+            placeholder="01234567891"
             required
           />
         </div>

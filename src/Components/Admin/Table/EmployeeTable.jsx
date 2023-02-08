@@ -5,7 +5,6 @@ import EmployeeForm from "./EmployeeForm";
 import classes from "./EmployeeTable.module.scss";
 
 let isInit = true;
-
 const EmployeeTable = ({ school }) => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -45,6 +44,7 @@ const EmployeeTable = ({ school }) => {
     }
 
     const updateEmployees = async () => {
+      console.log({ employeesList, isInit });
       const res = await fetch(
         `https://mgbackend.onrender.com/api/v1/${
           isSchool ? "schools" : "stores"
@@ -69,7 +69,8 @@ const EmployeeTable = ({ school }) => {
       navigate(0);
     };
     updateEmployees();
-  }, [employeesList, isSchool, navigate, school._id]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [employeesList, isSchool, navigate]);
 
   return (
     <>

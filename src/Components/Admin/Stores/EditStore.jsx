@@ -8,6 +8,7 @@ const EditSchoolForm = ({ school }) => {
   const [schoolNameInput, setSchoolNameInput] = useState();
   const [schoolTitleInput, setSchoolTitleInput] = useState();
   const [location, setLocation] = useState();
+  const [phone, setPhone] = useState();
   const [address, setAddress] = useState();
   const [cityInput, setCityInput] = useState();
   const [citiesArray, setCitiesArray] = useState([]);
@@ -18,9 +19,17 @@ const EditSchoolForm = ({ school }) => {
     setSchoolNameInput(school.name);
     setAddress(school.address);
     setLocation(school.map);
+    setPhone(school.phone);
     govChangeHandler(school.city.governorate_id);
     setCityInput(school.city);
-  }, [school.address, school.city, school.map, school.name, school.title]);
+  }, [
+    school.address,
+    school.city,
+    school.map,
+    school.name,
+    school.phone,
+    school.title,
+  ]);
 
   const govChangeHandler = (gov_id) => {
     const tempCities = cities.filter((city) => city.governorate_id === gov_id);
@@ -38,6 +47,7 @@ const EditSchoolForm = ({ school }) => {
       title: schoolTitleInput,
       name: schoolNameInput,
       address,
+      phone,
       map: location,
       city: cityInput,
     };
@@ -103,6 +113,18 @@ const EditSchoolForm = ({ school }) => {
             id="address"
             name="address"
             placeholder="Address"
+            required
+          />
+        </div>
+        <div className={classes.row}>
+          <label htmlFor="address">Phone</label>
+          <input
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            type="text"
+            id="phone"
+            name="phone"
+            placeholder="01234567891"
             required
           />
         </div>

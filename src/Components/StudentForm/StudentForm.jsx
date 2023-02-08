@@ -24,7 +24,8 @@ const StudentForm = (props) => {
     <div className={classes["form-wraper"]}>
       <form onSubmit={submitHandler} className={classes["student-form"]}>
         <h2 className={classes["student-form__title"]}>
-          Welcome {props.schoolName} School
+          Welcome {props.schoolName}
+          {props.schoolName.toLowerCase().includes("school") ? "" : " School"}
         </h2>
         <h1 className={classes["student-form__title"]}>
           Subscribe with us to get more gift(s)

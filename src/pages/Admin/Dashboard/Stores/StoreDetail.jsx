@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { defer, redirect, useLoaderData, useNavigate } from "react-router-dom";
 import EditStoreForm from "../../../../Components/Admin/Stores/EditStore";
-import EmployeeTable from "../../../../Components/Admin/Table/EmployeeTable";
 import Modal from "../../../../Components/UI/Modal";
 import classes from "./StoreDetail.module.scss";
 
@@ -55,9 +54,6 @@ const StoreDetail = () => {
       <div className={classes.container}>
         <div className={classes["school-detail"]}>
           <EditStoreForm school={store} />
-        </div>
-        <div className={classes["employe-detail"]}>
-          <EmployeeTable school={store} />
         </div>
       </div>
     </main>

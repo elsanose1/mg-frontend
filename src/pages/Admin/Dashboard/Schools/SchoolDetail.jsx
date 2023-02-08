@@ -8,7 +8,6 @@ import classes from "./SchoolDetail.module.scss";
 let content = "";
 const SchoolDetail = () => {
   const { school } = useLoaderData();
-  console.log(school);
   const navigate = useNavigate();
   const [showAlert, setShowAlert] = useState(false);
 

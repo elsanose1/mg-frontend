@@ -46,7 +46,6 @@ const EmployeeForm = ({ onSubmit }) => {
         <label htmlFor="email">Email</label>
         <input
           ref={emailInput}
-          required
           type="email"
           placeholder="John@mail.com"
           name="email"
@@ -57,7 +56,6 @@ const EmployeeForm = ({ onSubmit }) => {
         <label htmlFor="phone">Phone</label>
         <input
           ref={phoneInput}
-          required
           type="text"
           placeholder="012345678910"
           name="phone"
