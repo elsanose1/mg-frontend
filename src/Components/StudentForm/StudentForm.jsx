@@ -10,13 +10,13 @@ const StudentForm = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+
     const user = {
       name: `${firstName.current.value.trim()} ${lastName.current.value.trim()}`,
       email: email.current.value,
       phone: phone.current.value,
       NOC: NOC.current.value,
     };
-
     props.submitHandler(user);
   };
 
@@ -84,6 +84,7 @@ const StudentForm = (props) => {
         <div className={classes["student-form__row"]}>
           <label htmlFor="children">Number of Children in this school</label>
           <input
+            ref={NOC}
             type="number"
             name="children"
             min="1"
@@ -94,8 +95,12 @@ const StudentForm = (props) => {
             required
           />
         </div>
-        <button type="submit" className={classes.btn}>
-          Subscribe
+        <button
+          type="submit"
+          disabled={props.isLoading}
+          className={classes.btn}
+        >
+          {props.isLoading ? "Loading..." : "Subscribe"}
         </button>
       </form>
     </div>

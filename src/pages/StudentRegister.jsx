@@ -1,15 +1,20 @@
+import React, { useState } from "react";
+import { defer, redirect, useLoaderData, useNavigate } from "react-router-dom";
 import MainNavigation from "../Components/MainNavigation/MainNavigation";
 import StudentForm from "../Components/StudentForm/StudentForm";
-import React, { useState } from "react";
-import { defer, redirect, useLoaderData } from "react-router-dom";
+import Modal from "../Components/UI/Modal";
 
 const RegesterStudent = (props) => {
+  const navigate = useNavigate();
   const { schoolName, schoolID } = useLoaderData();
   const [errors, setErrors] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isRegesterd, setIsRegesterd] = useState(false);
   const submitHandler = async (user) => {
+    setIsLoading(true);
     setErrors("");
     try {
-      const res = await fetch("http://127.0.0.1:8080/api/v1/clients", {
+      const res = await fetch("https://mgbackend.onrender.com/api/v1/clients", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -19,7 +24,6 @@ const RegesterStudent = (props) => {
 
       const data = await res.json();
       if (!res.ok) {
-        console.log(data);
         if (data.Error.keyValue) {
           setErrors(`${Object.keys(data.Error.keyValue)[0]} Alredy Exists`);
         } else {
@@ -27,19 +31,26 @@ const RegesterStudent = (props) => {
         }
       }
       if (res.ok) {
-        console.log(data);
+        setIsRegesterd(true);
+        setTimeout(() => navigate("/products"), 1000);
       }
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
+
+    setIsLoading(false);
   };
   return (
     <>
+      {isRegesterd && (
+        <Modal>
+          <h1>Registered Successfully</h1>
+        </Modal>
+      )}
       <MainNavigation />
       <StudentForm
         schoolName={schoolName}
         errors={errors}
         submitHandler={submitHandler}
+        isLoading={isLoading}
       />
     </>
   );

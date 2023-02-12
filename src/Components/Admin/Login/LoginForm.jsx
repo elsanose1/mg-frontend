@@ -14,7 +14,6 @@ const LoginForm = (props) => {
     };
     props.onLogin(user);
   };
-  console.log(isLoading);
 
   return (
     <div className={classes["form-wraper"]}>

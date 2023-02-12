@@ -48,14 +48,12 @@ const StoreForm = () => {
       });
 
       if (!res.ok) {
-        console.log(res);
         setIsError(true);
         return null;
       }
 
       navigate("/admin/dashboard/stores");
     } catch (error) {
-      console.log(error);
       setIsError(true);
     }
   };

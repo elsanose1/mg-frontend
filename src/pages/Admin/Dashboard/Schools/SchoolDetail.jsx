@@ -26,7 +26,6 @@ const SchoolDetail = () => {
     );
 
     if (!res.ok) {
-      console.log("error");
       content = "Error happend plz try again..";
     } else {
       content = "School Deleted Successfully..";

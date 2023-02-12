@@ -44,7 +44,6 @@ const EmployeeTable = ({ school }) => {
     }
 
     const updateEmployees = async () => {
-      console.log({ employeesList, isInit });
       const res = await fetch(
         `https://mgbackend.onrender.com/api/v1/${
           isSchool ? "schools" : "stores"
@@ -62,7 +61,6 @@ const EmployeeTable = ({ school }) => {
       );
 
       if (!res.ok) {
-        console.log("error");
         return;
       }
 

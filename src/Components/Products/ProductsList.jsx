@@ -7,8 +7,8 @@ const ProductsList = ({ products }) => {
       <h1> Some Of Our Products</h1>
       <div className={classes["cards"]}>
         {products.length > 0 &&
-          products.map((product) => (
-            <ProductCard key={product.title} product={product} />
+          products.map((product, index) => (
+            <ProductCard key={`${product.title}-${index}`} product={product} />
           ))}
       </div>
     </div>

@@ -62,7 +62,6 @@ const EditSchoolForm = ({ school }) => {
 
       navigate(0);
     } catch (error) {
-      console.log(error);
       setIsError(true);
     }
   };

@@ -25,7 +25,6 @@ const StoreDetail = () => {
     );
 
     if (!res.ok) {
-      console.log("error");
       content = "Error happend plz try again..";
     } else {
       content = "store Deleted Successfully..";

@@ -46,14 +46,12 @@ const SchoolForm = () => {
       });
 
       if (!res.ok) {
-        console.log(res);
         setIsError(true);
         return null;
       }
 
       navigate("/admin/dashboard/schools");
     } catch (error) {
-      console.log(error);
       setIsError(true);
     }
   };

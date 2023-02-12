@@ -2430,7 +2430,7 @@ export const cities = [
 export const products = [
   {
     title: "M&G glue stick",
-    img: "https://elmanar.com.eg/media/catalog/product/cache/caa898387c92d5925ba5470b2b30c461/8/f/8f222a3da1fe3cc584a8db1c1e4d6a5a.jpg",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/2/6/2652562225261471.jpg",
   },
 
   {
