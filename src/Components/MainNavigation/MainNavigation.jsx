@@ -6,13 +6,28 @@ const MainNavigation = () => {
     <div className={classes["main-nav"]}>
       <ul className={classes["main-nav__list"]}>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? classes.active : "")}
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/">Stores</NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? classes.active : "")}
+          >
+            Stores
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/">Products</NavLink>
+          <NavLink
+            to="/products"
+            className={({ isActive }) => (isActive ? classes.active : "")}
+          >
+            Products
+          </NavLink>
         </li>
       </ul>
     </div>

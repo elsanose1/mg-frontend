@@ -22,7 +22,8 @@
 .main-nav__list li {
   position: relative;
 }
-.main-nav__list li::before {
+.main-nav__list li::before,
+.active::before {
   content: "";
   position: absolute;
   top: 90%;
@@ -33,6 +34,7 @@
   transition: all 0.5s ease-in-out;
 }
 
-.main-nav__list li:hover::before {
+.main-nav__list li:hover::before,
+.active::before {
   width: 100%;
 }

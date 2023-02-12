@@ -29,6 +29,8 @@ import NewStore from "./pages/Admin/Dashboard/Stores/NewStore";
 import HomePage from "./pages/HomePage";
 import RegesterStudent, { fetchSchool } from "./pages/StudentRegister";
 
+import Products from "./pages/Products";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: "products",
+        element: <Products />,
       },
       {
         path: "register/:schoolID",

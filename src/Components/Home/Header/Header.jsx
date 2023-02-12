@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import classes from "./Header.module.scss";
 import logo from "./logo.png";
 
@@ -15,9 +16,12 @@ const Header = () => {
           <span className={classes["heading-primary-sub"]}>Let ideas fly!</span>
         </h1>
 
-        <a href="#product" className={`btn btn-white ${classes["btn-header"]}`}>
+        <Link
+          to="products"
+          className={`btn btn-white ${classes["btn-header"]}`}
+        >
           Discover Our Products
-        </a>
+        </Link>
       </div>
     </header>
   );

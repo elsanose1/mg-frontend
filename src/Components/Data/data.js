@@ -2426,3 +2426,299 @@ export const cities = [
     city_name_en: "Alkawthar",
   },
 ];
+
+export const products = [
+  {
+    title: "M&G glue stick",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/caa898387c92d5925ba5470b2b30c461/8/f/8f222a3da1fe3cc584a8db1c1e4d6a5a.jpg",
+  },
+
+  {
+    title: "M&G Pencil",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/c/e/ceruzka-grafitova-m-g-trojhranna-hb-ergo-balenie-12-ks_1_.jpg",
+  },
+
+  {
+    title: "M&G Correction Tape",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/s/g/sg-11134201-23010-3quqdsnigtlv85.jpg",
+  },
+
+  {
+    title: "M&G Sharpner",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/o/1/o1cn01qw85xc2avqi0lz9l0__1091158265.jpg_q50s50.jpg",
+  },
+
+  {
+    title: "M&G Whiteboard Marker Non-Toxic Bullet",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/s/-/s-l1600_19_.jpg",
+  },
+  {
+    title: "M&G Highlighter Pen",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6947503754556all.png",
+  },
+  {
+    title: "M&G Rebily Stationery HB No Wood Hexagon Rod Pencil ",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/1/61-hxkcw0il._ac_sx425__1.jpg",
+  },
+  {
+    title: "M&G Eraser",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/i/m/image_195509_1_3432.jpg",
+  },
+  {
+    title: "M&G Plactic Sharpner",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/8/5/85916302165151815.jpg",
+  },
+  {
+    title: "M&G Wooden Sharpner",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/2/5/25612848948181.jpg",
+  },
+  {
+    title: "M&G Metal Sharpner",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/9/1/91225.png",
+  },
+  {
+    title: "M&G Highlighter Pen Set",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/1/_/1_2__1_3.jpg",
+  },
+  {
+    title: "M&G Highlighter Pen Set",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/b/e/be481d72d5a628f871b7.jpg",
+  },
+  {
+    title: "M&G String Pen",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/_/-/_-_pen_m_g_-elmanar.png",
+  },
+  {
+    title: "M&G Pen",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6953787352814.png",
+  },
+  {
+    title: "M&G Gel Pen",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/m/g/mg-gbeaus-gel-pen-gp99-0-5mm-black-_1.jpg",
+  },
+  {
+    title: "M&G Gel Pen Holder",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/m/-/m-g-retractable-phone-holder-gel-pen-0-5mm-gel-pens-blue-ink-pen-black-red.jpg_q50_2_.jpg",
+  },
+  {
+    title: "M&G Red Ink Pen",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6941600113339.jpg",
+  },
+  {
+    title: "M&G Whiteboard Marker",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6937168818854_1__1_2.png",
+  },
+  {
+    title: "M&G Mechanical Pencil",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6941025194418.png",
+  },
+  {
+    title: "M&G semi gel pen",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/-/6/-6941458303784002.png",
+  },
+  {
+    title: "M&G Metal Tip Correction",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/i/m/img_4554.jpg",
+  },
+  {
+    title: "M&G Correction Pen",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6941025131529.png",
+  },
+  {
+    title: "M&G Correction Pen",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6937168808961-2.png",
+  },
+  {
+    title: "M&G Acrylic Colour",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6941600172466.png",
+  },
+  {
+    title: "M&G Colored Pencils",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6931747197620.jpg",
+  },
+  {
+    title: "M&G Paints Brush Set",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/m/-/m-g-art-brush-round-pointed-paint-brush-set-4pcs-watercolor-oil-painting-brush.jpg",
+  },
+  {
+    title: "M&G Bagged Double-Headed Marker Pen Color Painting ",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/2/62c7e887n3b4470f6.jpg_q70.jpg",
+  },
+  {
+    title: "M&G Food Grade Easy Washable Cone Head Watercolor Pen",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/o/1/o1cn01bstw0a2amgkwjisdm__2212448448245-0-cib.jpg",
+  },
+  {
+    title: "M&G Professional Charcoal Pencil",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/8/68b1d08cc2826ef8.jpg",
+  },
+  {
+    title: "M&G Oil Pastels Paints",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6947503750473.jpg",
+  },
+  {
+    title: "M&G Pencil Color",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6925282282378-2.png",
+  },
+  {
+    title: "M&G Pencil Color(Aquarell)",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6925282282385.png",
+  },
+  {
+    title: "M&G Crayons",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6941255197074.png",
+  },
+  {
+    title: "M&G Acrylic paints set",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6941600170479.png",
+  },
+
+  {
+    title: "M&G Aqua Oil Pastels",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/1/5/1526156156145145615641.png",
+  },
+  {
+    title: "M&G Double-headed Marker Hand Painting Design Set",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/caa898387c92d5925ba5470b2b30c461/t/h/thumb_201912251413350013.jpg",
+  },
+  {
+    title: "M&G Acrylic Marker",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/p/o/popisovac-m-g-acrylic-marker-2-mm-akrylovy-neon-yellow-s040.jpg",
+  },
+  {
+    title: "M&G Steel ruler 30cm stainless steel",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/2/0/201807160324176472_x.jpg",
+  },
+  {
+    title: "M&G Hand Craft Scissors",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/h/5/h56bf468bee0048bdbb93cc144093f272e.jpg",
+  },
+  {
+    title: "M&G Powerful Scissors Paper Cutting",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/o/1/o1cn01tjhbcv1kfzxg7wiis__2206634434654.jpg_560x560q90_1.jpg",
+  },
+  {
+    title: "M&G Transparent 30cm Office Plastic Ruler",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/c/4/c4wakumn2acdbx8xl69vga.jpg",
+  },
+  {
+    title: "M&G Super Hero Geometric Set All In One Metal Box ",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/s/c/school-math-set-m-g-super-hero-in-a-tin-box.jpg",
+  },
+  {
+    title: "M&G Wavy Ruler 15cm Morning Light Triangle Ruler Large ",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/o/1/o1cn01fdompa1i1ioc3ote4__2206514874353.jpg_q75.jpg",
+  },
+  {
+    title: "M&G White Glue",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/1/2/1251225815185.jpg",
+  },
+  {
+    title: "M&G Triangle Set",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6925282226525.png",
+  },
+  {
+    title: "M&G Stiky note",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6933631536171.png",
+  },
+  {
+    title: "M&G Stapler",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/0/c/0cdf684e484d4bd89f1340d76f05d787.jpg",
+  },
+  {
+    title: "M&G Staples",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/1/61zelw0vuys._ac_sx679_.jpg",
+  },
+  {
+    title: "M&G Whiteboard with stand",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/1/61zelw0vuys._ac_sx679_.jpg",
+  },
+  {
+    title: "M&G Whiteboard",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/w/h/whiteboard_m_g_elmanar.jpeg",
+  },
+  {
+    title: "M&G Kidz Whiteboard",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6921734978080.png",
+  },
+  {
+    title: "M&G Washi tape",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6941255116105-9.png",
+  },
+  {
+    title: "M&G Nano Double face tape",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/1/4/145397606_607745673393148_8931882781152412938_n.jpg",
+  },
+  {
+    title: "M&G scissors(changable head)",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6933631594270.png",
+  },
+  {
+    title: "M&G Compasses",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6925282206152-2_1.png",
+  },
+  {
+    title: "M&G Geometric set",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6947503733551_2_.png",
+  },
+  {
+    title: "M&G Battery",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/9/6937168895770.png",
+  },
+  {
+    title: "M&G Sticky Note(Book Mark)",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/5/0/5007747_x3.jpg",
+  },
+  {
+    title: "M&G Measuring Tape",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/8/68363227b24adc4cd064ac9bdc5b1778.jpg",
+  },
+  {
+    title: "M&G Reporting Ruler File A4",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/t/b/tb1ttqpfvxxxxaxxxxxxxxxxxxx__0-item_pic.jpg",
+  },
+  {
+    title: "M&G ​​Micro Water Proof Fineliner",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/3/2/323676_1_6.jpg",
+  },
+  {
+    title: "M&G Pen Stand",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/8/9/899392511182222577624365_x_1.jpg",
+  },
+  {
+    title: "M&G Metal Propelling Pencil Write Constantly",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/3/_/3_bf694d9bc8d8451492ead5cfc2e9bd74_master.png",
+  },
+  {
+    title: "M&G Staples",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/s/p/spinky-do-zosivacky-medene-m-g-24-6-1000-ks.jpg",
+  },
+  {
+    title: "M&G Gray Professional Art Markers",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/b/e/be714c18a3bee972.jpg",
+  },
+  {
+    title: "M&G Transparent Sealing Tape 48mm*100y ",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/8/4/846825990184188745144523.jpg",
+  },
+  {
+    title: "M&G CEGMA Collection Fountain Pen Set, Classic Design",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/5/1/51pfawyu1hl.jpg",
+  },
+  {
+    title: "M&G Reading Frame Book Clip Fixed Book Table",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/5/1/5144154b344081edc59239b00c69f29e.jpg",
+  },
+  {
+    title: "Student Reading Frame Book Stand",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/6/d/6d892b6a4d34436b331ed5997dfa24e7.jpg",
+  },
+  {
+    title: "M&G Writing Board Clip/Pad/Folder Board A4 Aluminum ",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/5/a/5ad85f21nce69f571.jpg",
+  },
+  {
+    title: "M&G Notepad Clip Office Writing Board Transparent",
+    img: "https://elmanar.com.eg/media/catalog/product/cache/1e2b81d8c7fc8181537ab53009c8c0f5/5/6/566e287bna41925fa.jpg",
+  },
+];
