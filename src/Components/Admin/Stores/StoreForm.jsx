@@ -9,6 +9,7 @@ const StoreForm = () => {
   const [storeNameInput, setstoreNameInput] = useState();
   const [location, setLocation] = useState();
   const [phone, setPhone] = useState();
+  const [image, setImage] = useState();
   const [address, setAddress] = useState();
   const [cityInput, setCityInput] = useState();
   const [citiesArray, setCitiesArray] = useState([]);
@@ -34,6 +35,7 @@ const StoreForm = () => {
       address,
       map: location,
       phone,
+      img: image,
       city: cityInput,
     };
 
@@ -106,6 +108,18 @@ const StoreForm = () => {
             id="phone"
             name="phone"
             placeholder="01234567891"
+            required
+          />
+        </div>
+        <div className={classes.row}>
+          <label htmlFor="img">Image</label>
+          <input
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+            type="url"
+            id="img"
+            name="img"
+            placeholder="Image Link"
             required
           />
         </div>

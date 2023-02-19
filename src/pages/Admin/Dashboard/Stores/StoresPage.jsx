@@ -1,27 +1,40 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Suspense } from "react";
+import { Await, defer, useLoaderData } from "react-router-dom";
 import Table from "../../../../Components/Admin/Table/Table";
+import Loader from "../../../../Components/UI/Loader";
 
 const SchoolsPage = () => {
   const { stores } = useLoaderData();
   return (
     <>
-      <Table data={stores} />
+      <Suspense fallback={<Loader />}>
+        <Await resolve={stores}>{(data) => <Table data={data} />}</Await>
+      </Suspense>
     </>
   );
 };
 
-export const fetchStores = async () => {
+const loadStores = async () => {
   const res = await fetch("https://mgbackend.onrender.com/api/v1/stores", {
     headers: {
       Authorization: "Bearer " + localStorage.getItem("jwt"),
     },
   });
-  const data = await res.json();
+  if (!res.ok) {
+    throw new Response(JSON.stringify({ message: "Cloud't fetch data!" }), {
+      status: 500,
+    });
+  } else {
+    const data = await res.json();
 
-  return {
-    stores: data.data.docs,
-  };
+    return data.data.docs;
+  }
+};
+export const fetchStores = async () => {
+  return defer({
+    stores: loadStores(),
+  });
 };
 
 export default SchoolsPage;

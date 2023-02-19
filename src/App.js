@@ -18,7 +18,9 @@ import NewSchool from "./pages/Admin/Dashboard/Schools/NewSchool";
 import SchoolRoot from "./pages/Admin/Dashboard/Schools/Root";
 
 // stores Pages
-import Stores, { fetchStores } from "./pages/Admin/Dashboard/Stores/StoresPage";
+import AdminStores, {
+  fetchStores,
+} from "./pages/Admin/Dashboard/Stores/StoresPage";
 import StoreRoot from "./pages/Admin/Dashboard/Stores/Root";
 import StoreDetail, {
   fetchStore,
@@ -29,7 +31,11 @@ import NewStore from "./pages/Admin/Dashboard/Stores/NewStore";
 import HomePage from "./pages/HomePage";
 import RegesterStudent, { fetchSchool } from "./pages/StudentRegister";
 
+// Product Page
 import Products from "./pages/Products";
+
+// Stores Page
+import Stores from "./pages/Stores";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +49,11 @@ const router = createBrowserRouter([
       {
         path: "products",
         element: <Products />,
+      },
+      {
+        path: "stores",
+        loader: fetchStores,
+        element: <Stores />,
       },
       {
         path: "register/:schoolID",
@@ -91,7 +102,7 @@ const router = createBrowserRouter([
                 children: [
                   {
                     index: true,
-                    element: <Stores />,
+                    element: <AdminStores />,
                     loader: fetchStores,
                   },
                   {

@@ -9,6 +9,7 @@ const EditSchoolForm = ({ school }) => {
   const [schoolTitleInput, setSchoolTitleInput] = useState();
   const [location, setLocation] = useState();
   const [phone, setPhone] = useState();
+  const [image, setImage] = useState();
   const [address, setAddress] = useState();
   const [cityInput, setCityInput] = useState();
   const [citiesArray, setCitiesArray] = useState([]);
@@ -22,9 +23,11 @@ const EditSchoolForm = ({ school }) => {
     setPhone(school.phone);
     govChangeHandler(school.city.governorate_id);
     setCityInput(school.city);
+    setImage(school.img);
   }, [
     school.address,
     school.city,
+    school.img,
     school.map,
     school.name,
     school.phone,
@@ -48,6 +51,7 @@ const EditSchoolForm = ({ school }) => {
       name: schoolNameInput,
       address,
       phone,
+      img: image,
       map: location,
       city: cityInput,
     };
@@ -124,6 +128,18 @@ const EditSchoolForm = ({ school }) => {
             id="phone"
             name="phone"
             placeholder="01234567891"
+            required
+          />
+        </div>
+        <div className={classes.row}>
+          <label htmlFor="img">Image</label>
+          <input
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+            type="url"
+            id="img"
+            name="img"
+            placeholder="Image Link"
             required
           />
         </div>

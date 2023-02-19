@@ -1,7 +1,22 @@
 import React from "react";
-
+import { Suspense } from "react";
+import { Await, useLoaderData } from "react-router-dom";
+import MainNavigation from "../Components/MainNavigation/MainNavigation";
+import StoreList from "../Components/Stores/StoreList";
+import Loader from "../Components/UI/Loader";
 const Stores = () => {
-  return <div>Stores</div>;
+  const { stores } = useLoaderData();
+
+  return (
+    <>
+      <MainNavigation />
+      <Suspense fallback={<Loader />}>
+        <Await resolve={stores}>
+          {(loadedStores) => <StoreList stores={loadedStores} />}
+        </Await>
+      </Suspense>
+    </>
+  );
 };
 
 export default Stores;
