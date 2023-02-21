@@ -13,7 +13,9 @@ import Login from "./pages/Admin/Login";
 import SchoolsPage, {
   fetchSchools,
 } from "./pages/Admin/Dashboard/Schools/SchoolsPage";
-import SchoolDetail from "./pages/Admin/Dashboard/Schools/SchoolDetail";
+import SchoolDetail, {
+  fetchSchool,
+} from "./pages/Admin/Dashboard/Schools/SchoolDetail";
 import NewSchool from "./pages/Admin/Dashboard/Schools/NewSchool";
 import SchoolRoot from "./pages/Admin/Dashboard/Schools/Root";
 
@@ -29,7 +31,7 @@ import NewStore from "./pages/Admin/Dashboard/Stores/NewStore";
 
 //Home Page
 import HomePage from "./pages/HomePage";
-import RegesterStudent, { fetchSchool } from "./pages/StudentRegister";
+import RegesterStudent, { fetchSchoolsNames } from "./pages/StudentRegister";
 
 // Product Page
 import Products from "./pages/Products";
@@ -56,9 +58,9 @@ const router = createBrowserRouter([
         element: <Stores />,
       },
       {
-        path: "register/:schoolID",
+        path: "register/new",
         element: <RegesterStudent />,
-        loader: fetchSchool,
+        loader: fetchSchoolsNames,
       },
       {
         path: "admin",

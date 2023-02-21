@@ -1,13 +1,47 @@
-import { useRef } from "react";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
 import classes from "./StudentForm.module.css";
+import { useState, useRef } from "react";
+import { useLoaderData } from "react-router-dom";
+import { cities, govrnments } from "../Data/data";
+import { useEffect } from "react";
 
 const StudentForm = (props) => {
+  const { schools } = useLoaderData();
   const firstName = useRef();
   const lastName = useRef();
   const email = useRef();
   const phone = useRef();
   const NOC = useRef();
+  const [selectedSchool, setSelectedSchool] = useState({});
+  const [selectedGov, setSelectedGov] = useState({});
+  const [selectedCity, setSelectedCity] = useState({});
+  const [shcoolsList, setSchoolsList] = useState([]);
+  const [cityList, setCityList] = useState();
 
+  // change city depend on gov
+  useEffect(() => {
+    if (!selectedGov) {
+      setCityList([]);
+      return;
+    }
+    const selectedCities = cities.filter(
+      (item) => item.governorate_id === selectedGov.id
+    );
+    setCityList(selectedCities);
+  }, [selectedGov]);
+
+  // // change school depend on city
+  useEffect(() => {
+    if (!selectedCity) {
+      setSchoolsList([]);
+      return;
+    }
+    const selectedSchool = schools.filter(
+      (item) => item.city.id === selectedCity.id
+    );
+    setSchoolsList(selectedSchool);
+  }, [schools, selectedCity]);
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -16,6 +50,7 @@ const StudentForm = (props) => {
       email: email.current.value,
       phone: phone.current.value,
       NOC: NOC.current.value,
+      school: selectedSchool._id,
     };
     props.submitHandler(user);
   };
@@ -23,10 +58,6 @@ const StudentForm = (props) => {
   return (
     <div className={classes["form-wraper"]}>
       <form onSubmit={submitHandler} className={classes["student-form"]}>
-        <h2 className={classes["student-form__title"]}>
-          Welcome {props.schoolName}
-          {props.schoolName.toLowerCase().includes("school") ? "" : " School"}
-        </h2>
         <h1 className={classes["student-form__title"]}>
           Subscribe with us to get more gift(s)
         </h1>
@@ -40,7 +71,7 @@ const StudentForm = (props) => {
             maxLength="10"
             minLength="3"
             id="firstname"
-            placeholder="John"
+            placeholder="Ahmed"
             required
           />
         </div>
@@ -53,7 +84,7 @@ const StudentForm = (props) => {
             maxLength="10"
             minLength="3"
             id="lastname"
-            placeholder="Doe"
+            placeholder="Mohamed"
             required
           />
         </div>
@@ -65,7 +96,7 @@ const StudentForm = (props) => {
             name="email"
             id="email"
             required
-            placeholder="johnDoe@email.com"
+            placeholder="Ahmed@email.com"
           />
         </div>
         <div className={classes["student-form__row"]}>
@@ -93,6 +124,37 @@ const StudentForm = (props) => {
             placeholder="1"
             defaultValue="1"
             required
+          />
+        </div>
+        <div className={classes["student-form__row"]}>
+          <Autocomplete
+            onChange={(e, v) => setSelectedGov(v)}
+            options={govrnments}
+            getOptionLabel={(option) => option.governorate_name_en}
+            fullWidth={true}
+            isOptionEqualToValue={(o, v) =>
+              v.governorate_name_en === o.governorate_name_en
+            }
+            renderInput={(params) => (
+              <TextField {...params} label="Governorate" />
+            )}
+          />
+          <Autocomplete
+            onChange={(e, v) => setSelectedCity(v)}
+            disabled={!cityList || cityList.length === 0}
+            options={cityList}
+            getOptionLabel={(option) => option.city_name_en}
+            isOptionEqualToValue={(o, v) => true}
+            fullWidth={true}
+            renderInput={(params) => <TextField {...params} label="City" />}
+          />
+          <Autocomplete
+            onChange={(e, v) => setSelectedSchool(v)}
+            disabled={false}
+            options={shcoolsList}
+            isOptionEqualToValue={(o, v) => true}
+            fullWidth={true}
+            renderInput={(params) => <TextField {...params} label="Shcool" />}
           />
         </div>
         <button
