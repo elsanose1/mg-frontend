@@ -1,16 +1,19 @@
 import React, { useState } from "react";
-import { defer, redirect, useLoaderData, useNavigate } from "react-router-dom";
+import { defer, useNavigate } from "react-router-dom";
 import MainNavigation from "../Components/MainNavigation/MainNavigation";
 import StudentForm from "../Components/StudentForm/StudentForm";
 import Modal from "../Components/UI/Modal";
 
 const RegesterStudent = (props) => {
   const navigate = useNavigate();
-  const { schoolName, schoolID } = useLoaderData();
   const [errors, setErrors] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isRegesterd, setIsRegesterd] = useState(false);
   const submitHandler = async (user) => {
+    if (!user.school || user.school.length === 0) {
+      setErrors("Please Select School");
+      return;
+    }
     setIsLoading(true);
     setErrors("");
     try {
@@ -19,7 +22,7 @@ const RegesterStudent = (props) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...user, school: schoolID }),
+        body: JSON.stringify({ ...user }),
       });
 
       const data = await res.json();
@@ -47,7 +50,6 @@ const RegesterStudent = (props) => {
       )}
       <MainNavigation />
       <StudentForm
-        schoolName={schoolName}
         errors={errors}
         submitHandler={submitHandler}
         isLoading={isLoading}
@@ -56,31 +58,27 @@ const RegesterStudent = (props) => {
   );
 };
 
-export const fetchSchool = async ({ requset, params }) => {
-  const schoolID = params.schoolID;
-  let schoolName = "";
-  let school;
+const getSchoolsNames = async () => {
+  const res = await fetch(
+    "https://mgbackend.onrender.com/api/v1/schools/onlynames"
+  );
 
-  try {
-    const res = await fetch(
-      `https://mgbackend.onrender.com/api/v1/schools/${schoolID}`
-    );
-
-    if (!res.ok) {
-      return redirect("/");
-    }
-    if (res.ok) {
-      const data = await res.json();
-      schoolName = data.data.item.title;
-      school = data.data.item;
-    }
-  } catch (error) {}
-
-  return defer({
-    school,
-    schoolName,
-    schoolID,
-  });
+  if (!res.ok) {
+    throw new Response(JSON.stringify({ message: "Cloud't fetch data!" }), {
+      status: 500,
+    });
+  } else {
+    const data = await res.json();
+    const dataList = data.data.schools.map((el) => {
+      return { ...el, label: el.title };
+    });
+    return dataList;
+  }
 };
 
+export const fetchSchoolsNames = async () => {
+  return defer({
+    schools: await getSchoolsNames(),
+  });
+};
 export default RegesterStudent;

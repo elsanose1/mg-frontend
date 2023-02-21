@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { defer, redirect, useLoaderData, useNavigate } from "react-router-dom";
 import EditSchoolForm from "../../../../Components/Admin/Schools/EditSchool";
 import EmployeeTable from "../../../../Components/Admin/Table/EmployeeTable";
 import Modal from "../../../../Components/UI/Modal";
@@ -61,6 +61,33 @@ const SchoolDetail = () => {
       </div>
     </main>
   );
+};
+
+export const fetchSchool = async ({ requset, params }) => {
+  const schoolID = params.schoolID;
+  let schoolName = "";
+  let school;
+
+  try {
+    const res = await fetch(
+      `https://mgbackend.onrender.com/api/v1/schools/${schoolID}`
+    );
+
+    if (!res.ok) {
+      return redirect("/");
+    }
+    if (res.ok) {
+      const data = await res.json();
+      schoolName = data.data.item.title;
+      school = data.data.item;
+    }
+  } catch (error) {}
+
+  return defer({
+    school,
+    schoolName,
+    schoolID,
+  });
 };
 
 export default SchoolDetail;
