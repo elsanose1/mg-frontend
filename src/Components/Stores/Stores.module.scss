@@ -13,6 +13,60 @@
   }
 }
 
+.banner {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  background-color: #03a9f4;
+  @media screen and (max-width: 35.5em) {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    .banner-images {
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+  }
+  span {
+    flex: 1;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    font-weight: 800;
+  }
+  .banner-images {
+    display: flex;
+    flex: 3;
+    justify-content: space-evenly;
+
+    img {
+      height: 50px;
+      object-fit: fill;
+      margin: 5px;
+      border-radius: 10px;
+      background-color: white;
+      padding: 0px 5px;
+    }
+  }
+}
+
+.filter {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  @media screen and (max-width: 35.5em) {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    .banner-images {
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+  }
+}
 .card {
   text-align: right;
   display: flex;
