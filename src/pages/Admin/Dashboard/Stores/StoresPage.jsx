@@ -27,8 +27,8 @@ const loadStores = async () => {
     });
   } else {
     const data = await res.json();
-
-    return data.data.docs;
+    const dd = data.data.docs;
+    return dd;
   }
 };
 export const fetchStores = async () => {

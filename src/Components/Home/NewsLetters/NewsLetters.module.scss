@@ -1,0 +1,30 @@
+.newsletters {
+  background-color: #f7f7f7;
+  padding: 20rem 1rem;
+  margin-top: -20vh;
+
+  p {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    text-align: center;
+    padding: 2rem 0;
+    a {
+      text-decoration: none;
+      padding: 1rem 3rem;
+      outline: none;
+      border: none;
+      background-color: black;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 200px;
+      cursor: pointer;
+      transition: 0.2s ease-in-out all;
+      &:hover {
+        box-shadow: 0 5px 10px rgba(100, 91, 91, 0.999);
+      }
+    }
+  }
+}

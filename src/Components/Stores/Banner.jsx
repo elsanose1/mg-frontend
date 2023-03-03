@@ -42,6 +42,16 @@ const Banner = () => {
             alt="Jumia"
           />
         </a>
+        <a
+          href="https://kenzz.com/category/KLVHBCRJWRSM"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src="https://assets.kenzz.com/metadata/logo-kenzz.png"
+            alt="Kenz"
+          />
+        </a>
       </div>
     </div>
   );

@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-import { defer, useNavigate } from "react-router-dom";
+import React, { Suspense, useState } from "react";
+import { Await, defer, useLoaderData, useNavigate } from "react-router-dom";
+import Footer from "../Components/Footer/Footer";
 import MainNavigation from "../Components/MainNavigation/MainNavigation";
 import StudentForm from "../Components/StudentForm/StudentForm";
+import Loader from "../Components/UI/Loader";
 import Modal from "../Components/UI/Modal";
 
 const RegesterStudent = (props) => {
   const navigate = useNavigate();
+  const { schools } = useLoaderData();
   const [errors, setErrors] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isRegesterd, setIsRegesterd] = useState(false);
@@ -49,11 +52,19 @@ const RegesterStudent = (props) => {
         </Modal>
       )}
       <MainNavigation />
-      <StudentForm
-        errors={errors}
-        submitHandler={submitHandler}
-        isLoading={isLoading}
-      />
+      <Suspense fallback={<Loader />}>
+        <Await resolve={schools}>
+          {(loaddedSchools) => (
+            <StudentForm
+              schools={loaddedSchools}
+              errors={errors}
+              submitHandler={submitHandler}
+              isLoading={isLoading}
+            />
+          )}
+        </Await>
+      </Suspense>
+      <Footer />
     </>
   );
 };
@@ -78,7 +89,7 @@ const getSchoolsNames = async () => {
 
 export const fetchSchoolsNames = async () => {
   return defer({
-    schools: await getSchoolsNames(),
+    schools: getSchoolsNames(),
   });
 };
 export default RegesterStudent;

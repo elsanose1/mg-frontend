@@ -2,12 +2,10 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import classes from "./StudentForm.module.css";
 import { useState, useRef } from "react";
-import { useLoaderData } from "react-router-dom";
 import { cities, govrnments } from "../Data/data";
 import { useEffect } from "react";
 
 const StudentForm = (props) => {
-  const { schools } = useLoaderData();
   const firstName = useRef();
   const lastName = useRef();
   const email = useRef();
@@ -37,11 +35,11 @@ const StudentForm = (props) => {
       setSchoolsList([]);
       return;
     }
-    const selectedSchool = schools.filter(
+    const selectedSchool = props.schools.filter(
       (item) => item.city.id === selectedCity.id
     );
     setSchoolsList(selectedSchool);
-  }, [schools, selectedCity]);
+  }, [props.schools, selectedCity]);
   const submitHandler = (e) => {
     e.preventDefault();
 
