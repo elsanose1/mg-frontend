@@ -69,7 +69,7 @@ const StudentForm = (props) => {
             maxLength="10"
             minLength="3"
             id="firstname"
-            placeholder="Ahmed"
+            placeholder="John"
             required
           />
         </div>
@@ -82,7 +82,7 @@ const StudentForm = (props) => {
             maxLength="10"
             minLength="3"
             id="lastname"
-            placeholder="Mohamed"
+            placeholder="Doe"
             required
           />
         </div>
@@ -94,7 +94,7 @@ const StudentForm = (props) => {
             name="email"
             id="email"
             required
-            placeholder="Ahmed@email.com"
+            placeholder="JohnDoe@email.com"
           />
         </div>
         <div className={classes["student-form__row"]}>
@@ -106,7 +106,7 @@ const StudentForm = (props) => {
             maxLength="11"
             minLength="11"
             id="phone"
-            placeholder="01234567890"
+            placeholder="01XXXXXXXXX"
             required
           />
         </div>
