@@ -1,0 +1,158 @@
+// user form
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 20px 0;
+
+  .error {
+    color: red;
+  }
+
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    label {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    select,
+    input {
+      width: 200px;
+      height: 30px;
+      text-indent: 10px;
+    }
+  }
+  button {
+    display: block;
+    font-size: 18px;
+    background-color: black;
+    border-radius: 100px;
+    color: white;
+    padding: 10px 40px;
+    transition: all 0.2s;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+// table style
+.table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 10px;
+  position: relative;
+  color: black;
+
+  * {
+    position: relative;
+  }
+
+  td,
+  th {
+    padding-left: 8px;
+  }
+
+  thead tr {
+    height: 60px;
+    background: #03a9f4;
+    font-size: 16px;
+    color: white;
+  }
+
+  tbody tr {
+    height: 40px;
+    border-bottom: 1px solid #3a3a3a;
+    &:last-child {
+      border: 0;
+    }
+    &:hover {
+      background-color: #0000000c;
+    }
+  }
+
+  td a {
+    padding: 0px 10px;
+    margin: 0 auto;
+    text-decoration: none;
+    border-radius: 100px;
+    color: white;
+
+    background-color: #03a9f4;
+  }
+  td,
+  th {
+    text-align: left;
+    &.l {
+      text-align: right;
+    }
+    &.c {
+      text-align: center;
+    }
+    &.r {
+      text-align: right;
+    }
+  }
+}
+
+@media screen and (max-width: 35.5em) {
+  .table {
+    display: block;
+    > *,
+    tr,
+    td,
+    th {
+      display: block;
+    }
+
+    thead {
+      display: none;
+    }
+    tbody tr {
+      height: auto;
+      padding: 8px 0;
+      td {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &:before {
+          // position: absolute;
+          font-weight: 700;
+          width: 40%;
+          left: 10px;
+          top: 0;
+        }
+
+        &:nth-child(1):before {
+          content: "Name";
+        }
+        &:nth-child(2):before {
+          content: "Email";
+        }
+        &:nth-child(3):before {
+          content: "Role";
+        }
+      }
+    }
+  }
+}

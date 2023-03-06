@@ -70,7 +70,12 @@ export const fetchSchool = async ({ requset, params }) => {
 
   try {
     const res = await fetch(
-      `https://mgbackend.onrender.com/api/v1/schools/${schoolID}`
+      `https://mgbackend.onrender.com/api/v1/schools/${schoolID}`,
+      {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("jwt"),
+        },
+      }
     );
 
     if (!res.ok) {

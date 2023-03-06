@@ -2,12 +2,20 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 //utils
-import { isAuthonticated } from "./pages/Admin/checkUser";
+import { isAdmin, isAuthonticated } from "./pages/Admin/checkUser";
 import ErrorPage from "./pages/ErrorPage";
 
 // Admin Pages
 import AdminRoot from "./pages/Admin/AdminRoot";
 import Login from "./pages/Admin/Login";
+
+// Cpanel pages
+import CpanelRoot from "./pages/Admin/Dashboard/Cpanel/Root";
+
+import CUsers, { getUsers } from "./pages/Admin/Dashboard/Cpanel/Users/Users";
+import CSchools from "./pages/Admin/Dashboard/Cpanel/Schools";
+import CStores from "./pages/Admin/Dashboard/Cpanel/Stores";
+import CClients from "./pages/Admin/Dashboard/Cpanel/Clients";
 
 // schools Pages
 import SchoolsPage, {
@@ -38,6 +46,9 @@ import Products from "./pages/Products";
 
 // Stores Page
 import Stores from "./pages/Stores";
+import UserDetail, {
+  getUser,
+} from "./pages/Admin/Dashboard/Cpanel/Users/UserDetail";
 
 const router = createBrowserRouter([
   {
@@ -115,6 +126,41 @@ const router = createBrowserRouter([
                   {
                     path: "new",
                     element: <NewStore />,
+                  },
+                ],
+              },
+              {
+                path: "cpanel",
+                element: <CpanelRoot />,
+                loader: isAdmin,
+                children: [
+                  {
+                    path: "users",
+
+                    children: [
+                      {
+                        index: true,
+                        element: <CUsers />,
+                        loader: getUsers,
+                      },
+                      {
+                        path: ":userID",
+                        element: <UserDetail />,
+                        loader: getUser,
+                      },
+                    ],
+                  },
+                  {
+                    path: "schools",
+                    element: <CSchools />,
+                  },
+                  {
+                    path: "stores",
+                    element: <CStores />,
+                  },
+                  {
+                    path: "clients",
+                    element: <CClients />,
                   },
                 ],
               },

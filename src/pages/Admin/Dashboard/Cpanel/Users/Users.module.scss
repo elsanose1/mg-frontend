@@ -1,0 +1,10 @@
+.user-form__container {
+  .forms {
+    display: flex;
+    justify-content: space-evenly;
+
+    @media screen and ((max-width: 35.5em)) {
+      flex-direction: column;
+    }
+  }
+}

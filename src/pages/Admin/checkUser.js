@@ -14,9 +14,14 @@ export const isAuthonticated = async (role) => {
     return redirect("/admin/login");
   }
 
-  if (role === "admin" && !(user.role === "admin")) {
+  return user;
+};
+
+export const isAdmin = async () => {
+  const token = localStorage.getItem("jwt");
+  const user = jwtDecode(token);
+  if (user.role !== "admin") {
     return redirect("/admin/dashboard/schools");
   }
-
-  return user;
+  return null;
 };

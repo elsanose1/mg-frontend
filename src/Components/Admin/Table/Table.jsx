@@ -1,17 +1,15 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import classes from "./Table.module.scss";
 import { cities, govrnments } from "../../Data/data";
 import { useEffect, useState } from "react";
 
 export default function Table({ data }) {
-  const location = useLocation();
   const [datasList, setDatasList] = useState(data);
   const [fillterType, setFillterType] = useState("location");
   const [nameFilter, setNameFilter] = useState("");
   const [gov, setGov] = useState(0);
   const [city, setCity] = useState(0);
   const [citiesList, setCitiesList] = useState([]);
-  const isSchool = location.pathname.includes("schools");
 
   const govChangeHandler = (e) => {
     setGov(e.target.value);
@@ -143,7 +141,6 @@ export default function Table({ data }) {
               <td>{item.creator.name}</td>
               <td className={classes.r}>
                 <Link to={`${item._id}`}>View</Link>
-                {isSchool && <Link to={`/register/${item._id}`}>Sign Up</Link>}
                 <a href={item.map} target="_blank" rel="noreferrer">
                   Map
                 </a>

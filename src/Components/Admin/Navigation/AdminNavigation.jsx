@@ -34,7 +34,7 @@ const MainNavigation = () => {
             <li>
               <NavLink
                 className={({ isActive }) => (isActive ? classes.active : "")}
-                to="/admin/dashboard/users"
+                to="/admin/dashboard/cpanel"
               >
                 Admin
               </NavLink>
