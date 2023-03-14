@@ -29,7 +29,7 @@ const StoreList = ({ stores }) => {
     const selectedStores = stores.filter(
       (item) => item.city.id === selectedCity.id
     );
-    setStoresList(selectedStores);
+    setStoresList([...selectedStores].reverse());
   }, [selectedCity, selectedGov, stores]);
 
   // change city depend on gov
@@ -41,7 +41,7 @@ const StoreList = ({ stores }) => {
     const selectedCities = cities.filter(
       (item) => item.governorate_id === selectedGov.id
     );
-    setCityList([...selectedCities].reverse());
+    setCityList(selectedCities);
   }, [selectedGov]);
 
   // gov change handler
