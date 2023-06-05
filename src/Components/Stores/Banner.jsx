@@ -52,6 +52,16 @@ const Banner = () => {
             alt="Kenz"
           />
         </a>
+        <a
+          href="https://www.luluhypermarket.com/en-eg/search/?text=M%26G%3Arelevance"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src="https://www.luluhypermarket.com/cdn-cgi/image/f=auto/medias/logo-lulu.png?context=bWFzdGVyfGltYWdlc3wyNzM0N3xpbWFnZS9wbmd8YUdGa0wyZ3lZUzg1TlRVNE16VTRNVFl6TkRnMkwyeHZaMjh0YkhWc2RTNXdibWN8NTVkYWRjNzE2NDRhNDc4YTg1NGQ5M2U5ZTZmYzgzMjBiMTA0ZDU1MDMyYTcwNWExMTA2MTA0MmZiYWI3MGNhZg"
+            alt="lulu"
+          />
+        </a>
       </div>
     </div>
   );
