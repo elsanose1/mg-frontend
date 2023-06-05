@@ -46,7 +46,11 @@ const StoreList = ({ stores }) => {
 
   // gov change handler
   useEffect(() => {
-    if (!selectedGov || selectedGov.id === "0") {
+    if (!selectedGov) {
+      setStoresList([]);
+      return;
+    }
+    if (selectedGov.id === "0") {
       setStoresList([...stores].reverse());
       return;
     }
@@ -58,9 +62,9 @@ const StoreList = ({ stores }) => {
     setStoresList(selectedStores.reverse());
   }, [selectedGov, stores]);
 
-  useEffect(() => {
-    setStoresList([...stores].reverse());
-  }, [stores]);
+  // useEffect(() => {
+  //   setStoresList([...stores].reverse());
+  // }, [stores]);
   return (
     <>
       <Banner />
@@ -81,9 +85,7 @@ const StoreList = ({ stores }) => {
           isOptionEqualToValue={(o, v) =>
             v.governorate_name_en === o.governorate_name_en
           }
-          renderInput={(params) => (
-            <TextField {...params} label="Governorate" />
-          )}
+          renderInput={(params) => <TextField {...params} label="المحافظة" />}
         />
         <Autocomplete
           onChange={(e, v) => setSelectedCity(v)}
@@ -100,7 +102,7 @@ const StoreList = ({ stores }) => {
           getOptionLabel={(option) => option.city_name_ar}
           isOptionEqualToValue={(o, v) => true}
           fullWidth={true}
-          renderInput={(params) => <TextField {...params} label="City" />}
+          renderInput={(params) => <TextField {...params} label="المدينة" />}
         />
       </div>
       <div dir="rtl" className={classes.results}>

@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./Users.module.scss";
 import Table from "../../../../../Components/Admin/CPanel/Users/Table";
 import { Await, defer, useLoaderData } from "react-router-dom";
 import { Suspense } from "react";
 import Loader from "../../../../../Components/UI/Loader";
+import Modal from "../../../../../Components/UI/Modal";
+import NewUserForm from "../../../../../Components/Admin/CPanel/Users/NewUserForm";
 const Users = () => {
   const { users } = useLoaderData();
+  const [showNewUser, setShowNewUser] = useState(false);
   return (
     <>
+      {showNewUser && (
+        <Modal hide={(e) => setShowNewUser(false)}>
+          <NewUserForm />
+        </Modal>
+      )}
+      <div className={classes["new-user__div"]}>
+        <button onClick={(e) => setShowNewUser(true)}>+</button>
+      </div>
       <div className={classes.table}>
         <Suspense fallback={<Loader />}>
           <Await resolve={users}>

@@ -88,15 +88,26 @@
     }
   }
 
-  td a {
+  td a,
+  td .table-btn {
     padding: 0px 10px;
     margin: 0 auto;
     text-decoration: none;
     border-radius: 100px;
     color: white;
-
     background-color: #03a9f4;
   }
+
+  td .red-btn {
+    outline: none;
+    border: none;
+    font-weight: bold;
+    margin-left: 5px;
+    padding: 3px 10px;
+    background-color: red;
+    cursor: pointer;
+  }
+
   td,
   th {
     text-align: left;
